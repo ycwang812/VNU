@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">匯率換算</string>
+    <string name="exchangerate">匯率</string>
+    <string name="ntd">台幣</string>
+    <string name="calc_btn">計算 台幣兌換美金</string>
+    <string name="usd_result">可兌換美金：</string>
+
+</resources>

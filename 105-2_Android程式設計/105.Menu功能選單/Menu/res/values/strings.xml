@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MENU功能選單</string>
+	<string name="menu_create">新增項目</string>
+	<string name="menu_delete">刪除項目</string>
+	<string name="menu_about">關於</string>
+	<string name="menu_exit">離開</string>
+	<string name="btn_ok">確認</string>
+	<string name="btn_cancel">取消</string>
+	<string name="about_msg">TQC+ Android認證題庫</string>
+	<string name="exit_msg">是否確認離開系統？</string>
+
+</resources>

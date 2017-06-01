@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/mAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/str1"
+        android:inputType="number"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/mPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/str2"
+        android:password = "true"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/mCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str3"
+        android:textColor="@drawable/black" />
+
+</LinearLayout>

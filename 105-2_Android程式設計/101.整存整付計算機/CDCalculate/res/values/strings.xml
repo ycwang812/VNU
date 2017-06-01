@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">整存整付計算機</string>
+
+    <string name="title">整存整付試算：</string>
+
+    <string name="lend">本金(NT$)：</string>
+
+    <string name="rate">年利率(%)：</string>
+
+    <string name="number">存款期數：</string>
+
+    <string name="btn">計算本利和</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">公尺與英呎轉換</string>
+
+    <string name="title">請輸入要轉換的值：</string>
+
+    <string name="btn1">公尺轉換為英呎</string>
+
+    <string name="btn2">英呎轉換為公尺</string>
+
+    <string name="rest">重設</string>
+    
+    <string name="error">請輸入要轉換的值</string>
+
+</resources>

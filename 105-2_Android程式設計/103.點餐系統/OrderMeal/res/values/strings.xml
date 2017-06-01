@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">點餐系統</string>
+    <string name="title">歡迎光臨蟹堡王</string>
+    <string name="submit">進入點餐系統</string>
+    <string name="respond">您點的餐點有：</string>
+    <string name="sure">確定</string>
+    <string name="exit">離開</string>
+
+</resources>
