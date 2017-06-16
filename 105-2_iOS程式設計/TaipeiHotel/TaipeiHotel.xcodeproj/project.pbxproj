@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD05BB541C82D94300A5CEF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB531C82D94300A5CEF4 /* AppDelegate.swift */; };
+		DD05BB561C82D94300A5CEF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB551C82D94300A5CEF4 /* ViewController.swift */; };
+		DD05BB591C82D94300A5CEF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD05BB571C82D94300A5CEF4 /* Main.storyboard */; };
+		DD05BB5B1C82D94300A5CEF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD05BB5A1C82D94300A5CEF4 /* Assets.xcassets */; };
+		DD05BB5E1C82D94300A5CEF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD05BB5C1C82D94300A5CEF4 /* LaunchScreen.storyboard */; };
+		DD05BB691C82D94300A5CEF4 /* TaipeiHotelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB681C82D94300A5CEF4 /* TaipeiHotelTests.swift */; };
+		DD05BB741C82D94300A5CEF4 /* TaipeiHotelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB731C82D94300A5CEF4 /* TaipeiHotelUITests.swift */; };
+		DD05BB821C82E0A900A5CEF4 /* HotelSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB811C82E0A900A5CEF4 /* HotelSingle.swift */; };
+		DD05BB841C82E1DA00A5CEF4 /* MyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB831C82E1DA00A5CEF4 /* MyDelegate.swift */; };
+		DD05BB861C82E24100A5CEF4 /* HttpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB851C82E24100A5CEF4 /* HttpController.swift */; };
+		DD05BB8C1C82E69100A5CEF4 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD05BB8B1C82E69100A5CEF4 /* MyTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD05BB651C82D94300A5CEF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD05BB481C82D94300A5CEF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD05BB4F1C82D94300A5CEF4;
+			remoteInfo = TaipeiHotel;
+		};
+		DD05BB701C82D94300A5CEF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD05BB481C82D94300A5CEF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD05BB4F1C82D94300A5CEF4;
+			remoteInfo = TaipeiHotel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DD05BB501C82D94300A5CEF4 /* TaipeiHotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiHotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD05BB531C82D94300A5CEF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD05BB551C82D94300A5CEF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD05BB581C82D94300A5CEF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD05BB5A1C82D94300A5CEF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD05BB5D1C82D94300A5CEF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD05BB5F1C82D94300A5CEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD05BB641C82D94300A5CEF4 /* TaipeiHotelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaipeiHotelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD05BB681C82D94300A5CEF4 /* TaipeiHotelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiHotelTests.swift; sourceTree = "<group>"; };
+		DD05BB6A1C82D94300A5CEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD05BB6F1C82D94300A5CEF4 /* TaipeiHotelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaipeiHotelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD05BB731C82D94300A5CEF4 /* TaipeiHotelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaipeiHotelUITests.swift; sourceTree = "<group>"; };
+		DD05BB751C82D94300A5CEF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD05BB811C82E0A900A5CEF4 /* HotelSingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotelSingle.swift; path = ../HotelSingle.swift; sourceTree = "<group>"; };
+		DD05BB831C82E1DA00A5CEF4 /* MyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyDelegate.swift; path = ../MyDelegate.swift; sourceTree = "<group>"; };
+		DD05BB851C82E24100A5CEF4 /* HttpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpController.swift; path = ../HttpController.swift; sourceTree = "<group>"; };
+		DD05BB8B1C82E69100A5CEF4 /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD05BB4D1C82D94300A5CEF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD05BB611C82D94300A5CEF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD05BB6C1C82D94300A5CEF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD05BB471C82D94300A5CEF4 = {
+			isa = PBXGroup;
+			children = (
+				DD05BB521C82D94300A5CEF4 /* TaipeiHotel */,
+				DD05BB671C82D94300A5CEF4 /* TaipeiHotelTests */,
+				DD05BB721C82D94300A5CEF4 /* TaipeiHotelUITests */,
+				DD05BB511C82D94300A5CEF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD05BB511C82D94300A5CEF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD05BB501C82D94300A5CEF4 /* TaipeiHotel.app */,
+				DD05BB641C82D94300A5CEF4 /* TaipeiHotelTests.xctest */,
+				DD05BB6F1C82D94300A5CEF4 /* TaipeiHotelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD05BB521C82D94300A5CEF4 /* TaipeiHotel */ = {
+			isa = PBXGroup;
+			children = (
+				DD05BB531C82D94300A5CEF4 /* AppDelegate.swift */,
+				DD05BB551C82D94300A5CEF4 /* ViewController.swift */,
+				DD05BB8B1C82E69100A5CEF4 /* MyTableViewController.swift */,
+				DD05BB851C82E24100A5CEF4 /* HttpController.swift */,
+				DD05BB831C82E1DA00A5CEF4 /* MyDelegate.swift */,
+				DD05BB811C82E0A900A5CEF4 /* HotelSingle.swift */,
+				DD05BB571C82D94300A5CEF4 /* Main.storyboard */,
+				DD05BB5A1C82D94300A5CEF4 /* Assets.xcassets */,
+				DD05BB5C1C82D94300A5CEF4 /* LaunchScreen.storyboard */,
+				DD05BB5F1C82D94300A5CEF4 /* Info.plist */,
+			);
+			path = TaipeiHotel;
+			sourceTree = "<group>";
+		};
+		DD05BB671C82D94300A5CEF4 /* TaipeiHotelTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD05BB681C82D94300A5CEF4 /* TaipeiHotelTests.swift */,
+				DD05BB6A1C82D94300A5CEF4 /* Info.plist */,
+			);
+			path = TaipeiHotelTests;
+			sourceTree = "<group>";
+		};
+		DD05BB721C82D94300A5CEF4 /* TaipeiHotelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD05BB731C82D94300A5CEF4 /* TaipeiHotelUITests.swift */,
+				DD05BB751C82D94300A5CEF4 /* Info.plist */,
+			);
+			path = TaipeiHotelUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD05BB4F1C82D94300A5CEF4 /* TaipeiHotel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD05BB781C82D94300A5CEF4 /* Build configuration list for PBXNativeTarget "TaipeiHotel" */;
+			buildPhases = (
+				DD05BB4C1C82D94300A5CEF4 /* Sources */,
+				DD05BB4D1C82D94300A5CEF4 /* Frameworks */,
+				DD05BB4E1C82D94300A5CEF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaipeiHotel;
+			productName = TaipeiHotel;
+			productReference = DD05BB501C82D94300A5CEF4 /* TaipeiHotel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD05BB631C82D94300A5CEF4 /* TaipeiHotelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD05BB7B1C82D94300A5CEF4 /* Build configuration list for PBXNativeTarget "TaipeiHotelTests" */;
+			buildPhases = (
+				DD05BB601C82D94300A5CEF4 /* Sources */,
+				DD05BB611C82D94300A5CEF4 /* Frameworks */,
+				DD05BB621C82D94300A5CEF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD05BB661C82D94300A5CEF4 /* PBXTargetDependency */,
+			);
+			name = TaipeiHotelTests;
+			productName = TaipeiHotelTests;
+			productReference = DD05BB641C82D94300A5CEF4 /* TaipeiHotelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DD05BB6E1C82D94300A5CEF4 /* TaipeiHotelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD05BB7E1C82D94300A5CEF4 /* Build configuration list for PBXNativeTarget "TaipeiHotelUITests" */;
+			buildPhases = (
+				DD05BB6B1C82D94300A5CEF4 /* Sources */,
+				DD05BB6C1C82D94300A5CEF4 /* Frameworks */,
+				DD05BB6D1C82D94300A5CEF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD05BB711C82D94300A5CEF4 /* PBXTargetDependency */,
+			);
+			name = TaipeiHotelUITests;
+			productName = TaipeiHotelUITests;
+			productReference = DD05BB6F1C82D94300A5CEF4 /* TaipeiHotelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD05BB481C82D94300A5CEF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = eHappy;
+				TargetAttributes = {
+					DD05BB4F1C82D94300A5CEF4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
+					};
+					DD05BB631C82D94300A5CEF4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
+						TestTargetID = DD05BB4F1C82D94300A5CEF4;
+					};
+					DD05BB6E1C82D94300A5CEF4 = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
+						TestTargetID = DD05BB4F1C82D94300A5CEF4;
+					};
+				};
+			};
+			buildConfigurationList = DD05BB4B1C82D94300A5CEF4 /* Build configuration list for PBXProject "TaipeiHotel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD05BB471C82D94300A5CEF4;
+			productRefGroup = DD05BB511C82D94300A5CEF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD05BB4F1C82D94300A5CEF4 /* TaipeiHotel */,
+				DD05BB631C82D94300A5CEF4 /* TaipeiHotelTests */,
+				DD05BB6E1C82D94300A5CEF4 /* TaipeiHotelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD05BB4E1C82D94300A5CEF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD05BB5E1C82D94300A5CEF4 /* LaunchScreen.storyboard in Resources */,
+				DD05BB5B1C82D94300A5CEF4 /* Assets.xcassets in Resources */,
+				DD05BB591C82D94300A5CEF4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD05BB621C82D94300A5CEF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD05BB6D1C82D94300A5CEF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD05BB4C1C82D94300A5CEF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD05BB841C82E1DA00A5CEF4 /* MyDelegate.swift in Sources */,
+				DD05BB8C1C82E69100A5CEF4 /* MyTableViewController.swift in Sources */,
+				DD05BB861C82E24100A5CEF4 /* HttpController.swift in Sources */,
+				DD05BB561C82D94300A5CEF4 /* ViewController.swift in Sources */,
+				DD05BB821C82E0A900A5CEF4 /* HotelSingle.swift in Sources */,
+				DD05BB541C82D94300A5CEF4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD05BB601C82D94300A5CEF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD05BB691C82D94300A5CEF4 /* TaipeiHotelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD05BB6B1C82D94300A5CEF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD05BB741C82D94300A5CEF4 /* TaipeiHotelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD05BB661C82D94300A5CEF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD05BB4F1C82D94300A5CEF4 /* TaipeiHotel */;
+			targetProxy = DD05BB651C82D94300A5CEF4 /* PBXContainerItemProxy */;
+		};
+		DD05BB711C82D94300A5CEF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD05BB4F1C82D94300A5CEF4 /* TaipeiHotel */;
+			targetProxy = DD05BB701C82D94300A5CEF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD05BB571C82D94300A5CEF4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD05BB581C82D94300A5CEF4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD05BB5C1C82D94300A5CEF4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD05BB5D1C82D94300A5CEF4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD05BB761C82D94300A5CEF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD05BB771C82D94300A5CEF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD05BB791C82D94300A5CEF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TaipeiHotel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehappy.app.TaipeiHotel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DD05BB7A1C82D94300A5CEF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TaipeiHotel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehappy.app.TaipeiHotel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DD05BB7C1C82D94300A5CEF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TaipeiHotelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehappy.app.TaipeiHotelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaipeiHotel.app/TaipeiHotel";
+			};
+			name = Debug;
+		};
+		DD05BB7D1C82D94300A5CEF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TaipeiHotelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehappy.app.TaipeiHotelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaipeiHotel.app/TaipeiHotel";
+			};
+			name = Release;
+		};
+		DD05BB7F1C82D94300A5CEF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TaipeiHotelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehappy.app.TaipeiHotelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TaipeiHotel;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DD05BB801C82D94300A5CEF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TaipeiHotelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ehappy.app.TaipeiHotelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TaipeiHotel;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD05BB4B1C82D94300A5CEF4 /* Build configuration list for PBXProject "TaipeiHotel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD05BB761C82D94300A5CEF4 /* Debug */,
+				DD05BB771C82D94300A5CEF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD05BB781C82D94300A5CEF4 /* Build configuration list for PBXNativeTarget "TaipeiHotel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD05BB791C82D94300A5CEF4 /* Debug */,
+				DD05BB7A1C82D94300A5CEF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD05BB7B1C82D94300A5CEF4 /* Build configuration list for PBXNativeTarget "TaipeiHotelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD05BB7C1C82D94300A5CEF4 /* Debug */,
+				DD05BB7D1C82D94300A5CEF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD05BB7E1C82D94300A5CEF4 /* Build configuration list for PBXNativeTarget "TaipeiHotelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD05BB7F1C82D94300A5CEF4 /* Debug */,
+				DD05BB801C82D94300A5CEF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD05BB481C82D94300A5CEF4 /* Project object */;
+}
