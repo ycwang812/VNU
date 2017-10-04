@@ -1,0 +1,59 @@
+(  )  1.請問開發 iOS 需使用下列何種作業系統(OS)?
+        (A) Linux
+        (B) macOS
+        (C) Unix
+        (D) Windows
+
+(  )  2.請問開發 iOS 需使用以下何種開發工具(IDE)來進行開發？
+        (A) Android Studio
+        (B) Eclipse
+        (C) Visual Studio
+        (D) Xcode
+
+(  )  3.請問開發 iOS 需使用下列何種程式語言來進行開發？
+        (A) C/C++
+        (B) C#
+        (C) Java
+        (D) Object-C/Swift
+
+(  )  4.請問 iOS 是以下哪家公司推出的行動裝置作業系統?
+        (A) Apple
+        (B) Google
+        (C) Microsoft
+        (D) Oracle
+
+(  )  5.請問 iOS app 可安裝在下列何種裝置上？
+        (A) Apple tv
+        (B) Apple watch
+        (C) iPhone/iPad/iPod
+        (D) iMac/MacBook
+
+(  )  6.以下何者為非？
+        (A) 使用 let 關鍵字去設定常數(constant variable)
+        (B) 可變的(Mutable)物件則使用 var 關鍵字
+        (C) 陳述句(statement)不須再使用分號(;)做為結束
+        (D) 需要標頭檔(Header files)
+
+(  )  7.以下何者為判斷式？
+        (A) for-in
+        (B) if
+        (C) switch
+        (D) while
+
+(  )  8.以下何者為迴圈？
+        (A) for-in
+        (B) if
+        (C) switch
+        (D) while
+
+(  )  9.類別(class)裡不可做以下何種宣告？
+        (A) 成員變數
+        (B) 區域變數
+        (C) 方法(method)
+        (D) 建構式(initializer)
+
+(  ) 10.iOS app 可在以下何處購買下載？
+        (A) app store
+        (B) iTunes store
+        (C) Google play
+        (D) PChome
