@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AlertDialog顯示結果</string>
+
+    <string name="name">姓名：</string>
+
+    <string name="sex">性別：</string>
+
+    <string name="interest">興趣：</string>
+
+    <string name="btn">顯示結果</string>
+
+    <string name="male">帥哥</string>
+
+    <string name="female">美女</string>
+
+    <string name="eat">吃飯</string>
+
+    <string name="sleep">睡覺</string>
+
+    <string name="internet">上網</string>
+
+</resources>
