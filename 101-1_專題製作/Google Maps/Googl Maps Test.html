@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Google Maps 練習</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			html { height: 100% }
+			body { height: 100%; margin: 0px; padding: 0px }
+			#map_canvas { height: 100% }
+		</style>
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	</head>
+	<!-- body onload="initialize()" -->
+	<body>
+		<div id="map_canvas" style="width:100%; height:100%"></div>
+		<script type="text/javascript">
+			var map;
+			var floorPlan;
+			var customerMarker;
+			var marker0;
+		
+			$(function() {
+				initialize();
+			});
+			
+			function initialize() {
+				var latlng = new google.maps.LatLng(25.064000, 121.551200);
+				
+				var myOptions = {
+					zoom: 18,
+					center: latlng,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				
+				createButton();
+			}
+			
+			function createButton() {
+				// 地圖
+				var mapControlDiv = document.createElement('div');
+				var mapControl = new Control(mapControlDiv, 'map');
+				
+				mapControlDiv.index = 5;
+				map.controls[google.maps.ControlPosition.TOP_RIGHT].push(mapControlDiv);
+				
+				// 平面圖
+				var floorPlanControlDiv = document.createElement('div');
+				var floorPlanControl = new Control(floorPlanControlDiv, 'floorPlan');
+				
+				floorPlanControlDiv.index = 4;
+				map.controls[google.maps.ControlPosition.TOP_RIGHT].push(floorPlanControlDiv);
+				
+				var customerControlDiv = document.createElement('div');
+				var customerControl = new Control(customerControlDiv, 'lbs');
+				
+				customerControlDiv.index = 2;
+				map.controls[google.maps.ControlPosition.TOP_RIGHT].push(customerControlDiv);
+			}
+			
+			function Control(controlDiv, btnName) {
+				controlDiv.style.padding = '6px';
+				
+				var controlUI = document.createElement('div');
+				controlUI.style.backgroundColor = 'white';
+				controlUI.style.borderStyle = 'solid';
+				controlUI.style.borderWidth = '2px';
+				controlUI.style.cursor = 'pointer';
+				controlUI.style.textAlign = 'center';
+				controlDiv.appendChild(controlUI);
+				
+				var controlText = document.createElement('div');
+				controlText.style.fontFamily = 'Arial,sans-serif';
+				controlText.style.fontSize = '14px';
+				controlText.style.padding = '5px';
+				
+				switch (btnName) {
+					case 'map':
+						controlText.innerHTML = '地圖';
+						break;
+					case 'floorPlan':
+						controlText.innerHTML = '平面圖';
+						break;
+					case 'lbs':
+						controlText.innerHTML = '定位';
+						break;
+				}
+				
+				controlUI.appendChild(controlText);
+				
+				google.maps.event.addDomListener(controlUI, 'click', function() {
+					switch (btnName) {
+						case 'map':
+							clean();
+							break;
+						case 'floorPlan':
+							clean();
+							showFloorPlan();
+							break;
+						case 'lbs':
+							clean();
+							showFloorPlan();
+							createMarker();
+							break;
+					}
+				});
+			}
+			
+			function showFloorPlan() {
+				if (floorPlan != null) {
+					floorPlan.setMap(map);
+					return;
+				}
+			
+				var imageBounds = new google.maps.LatLngBounds(
+					new google.maps.LatLng(25.063580, 121.549500),
+					new google.maps.LatLng(25.064600, 121.553200)
+				);
+			
+				floorPlan = new google.maps.GroundOverlay('tsa_1f.jpg', imageBounds);
+			
+				floorPlan.setMap(map);
+			}
+			
+			function clean() {
+				if (floorPlan != null) {
+					floorPlan.setMap(null);
+				}
+				if (marker0 != null) {
+					marker0.setMap(null);
+					marker0 = null;
+				}
+			}
+			
+			function createMarker() {
+				var x = 25.063809, y = 121.551841;
+				
+				marker0 = new google.maps.Marker({
+					position: new google.maps.LatLng(x, y),
+					map: map, 
+					icon: 'http://www.youbike.com.tw/images/point/25/gface.png'
+				});
+			
+				for (var i = 1; i < 1000; i++) {
+					setTimeout(function() {
+						marker0.setPosition(new google.maps.LatLng(x, y -= 0.000001));
+					}, i * 100);
+				}
+			}
+		</script>
+	</body>
+</html>
