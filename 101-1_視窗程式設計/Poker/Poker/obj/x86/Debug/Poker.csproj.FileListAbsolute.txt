@@ -1,0 +1,9 @@
+C:\Project\Poker\Poker\bin\Debug\Poker.exe
+C:\Project\Poker\Poker\bin\Debug\Poker.pdb
+C:\Project\Poker\Poker\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Project\Poker\Poker\obj\x86\Debug\Poker.Form1.resources
+C:\Project\Poker\Poker\obj\x86\Debug\Poker.Properties.Resources.resources
+C:\Project\Poker\Poker\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Project\Poker\Poker\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Project\Poker\Poker\obj\x86\Debug\Poker.exe
+C:\Project\Poker\Poker\obj\x86\Debug\Poker.pdb
