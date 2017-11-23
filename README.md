@@ -23,7 +23,7 @@
 
 105-2_Android程式設計、iOS程式設計
 
-106-1_Android程式設計、Python/R資料處理、深度學習
+106-1_Android程式設計、Android遊戲設計、Python/R資料處理、深度學習
   
 ---
 ### 萬能科大數媒系
