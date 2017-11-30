@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">猜數字遊戲</string>
+    <string name="title">請輸入三個不重複的數字：</string>
+    <string name="btn">送出猜測數字</string>
+    <string name="error">輸入錯誤！請輸入三個不重複的數字</string>
+</resources>
