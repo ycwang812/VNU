@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="option_vs">
+        
+        <item >110V</item>
+        
+        <item >220V</item>
+        
+    </string-array>
+    
+</resources>

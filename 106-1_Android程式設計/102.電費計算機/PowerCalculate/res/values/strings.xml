@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">電費計算機</string>
+
+    <string name="title">請輸入以下資料後送出：</string>
+
+    <string name="option_v">伏特（ V ）：</string>
+    
+    <string name="option_a">安培（ A ）：</string>
+    
+    <string name="option_hr">每天使用時數：</string>
+    
+    <string name="option_m">每度電費：</string>
+    
+    <string name="btn">計算電器每月電費</string>
+    
+    <string name="note">[ 月皆以30天計算 ]</string>
+    
+    <string name="error_v">請選擇伏特值！</string>
+    
+    <string name="error_a">請輸入安培值！</string>
+    
+    <string name="error_hr">請輸入每天使用時數！</string>
+    
+    <string name="error_m">請輸入每度電費！</string>
+
+</resources>

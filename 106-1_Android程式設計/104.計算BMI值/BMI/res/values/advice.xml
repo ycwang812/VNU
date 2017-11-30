@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="back">回上一頁</string>
+    
+    <string name="result">BMI 結果 </string>
+    
+    <string name="bmi_heavy">您該少吃些，並多多運動</string>
+    
+    <string name="bmi_light">您該多吃點</string>
+    
+    <string name="bmi_average">體型很棒喔</string>
+    
+</resources>
