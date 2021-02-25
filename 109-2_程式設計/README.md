@@ -1,22 +1,10 @@
-# 109-1 AWS雲端運算與服務
+# 109-2_程式設計
 
 ## 1. 相關入口
 
-### AWS Educate - https://aws.amazon.com/tw/education/awseducate/
+### MIT App Inventor - https://appinventor.mit.edu
 
-![](https://github.com/ycwang812/VNU/blob/master/109-1_AWS雲端運算與服務/images/AWS%20Educate.png)
-
-### AWS Educate Login - https://www.awseducate.com/signin/SiteLogin
-
-![](https://github.com/ycwang812/VNU/blob/master/109-1_AWS雲端運算與服務/images/AWS%20Educate%20Login.png)
-
-### AWS Academy Canvas - https://awsacademy.instructure.com
-
-![](https://github.com/ycwang812/VNU/blob/master/109-1_AWS雲端運算與服務/images/AWS%20Academy%20Canvas.png)
-
-### AWS Training and Certification - https://www.aws.training
-
-![](https://github.com/ycwang812/VNU/blob/master/109-1_AWS雲端運算與服務/images/AWS%20Training%20and%20Certification.png)
+![](https://github.com/ycwang812/VNU/blob/master/109-2_程式設計/images/MIT%20App%20Inventor.png)
 
 ## 2. 學習平台
 
