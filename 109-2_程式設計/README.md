@@ -12,8 +12,6 @@
 
 ## 2. 學習平台
 
-### Canvas 學習平台課程：
+### CSF 雲端練功坊 - https://cloud.csf.org.tw/login.aspx
 
-1. AWS Academy Cloud Foundations [1507] - Educator (ACFv2CN-1507)
-
-2. AWS Academy Cloud Foundations [1509] - Educator (ACFv2EN-1509)
+![](https://github.com/ycwang812/VNU/blob/master/109-2_程式設計/images/CSF雲端練功坊.png)
