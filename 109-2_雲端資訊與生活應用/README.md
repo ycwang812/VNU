@@ -1,4 +1,4 @@
-# 109-1 AWS雲端運算與服務
+# 109-2 雲端資訊與生活應用
 
 ## 1. 相關入口
 
@@ -22,6 +22,12 @@
 
 ### Canvas 學習平台課程：
 
-1. AWS Academy Cloud Foundations [1507] - Educator (ACFv2CN-1507)
+1. AWS Academy Cloud Foundations [2719] (ACFv2CN-2719) - https://awsacademy.instructure.com/courses/2719
 
-2. AWS Academy Cloud Foundations [1509] - Educator (ACFv2EN-1509)
+2. AWS Academy Cloud Foundations [2718] (ACFv2EN-2718) - https://awsacademy.instructure.com/courses/2718
+
+## 3. 協作平台
+
+1. Line 群組 - http://line.me/ti/g/i3c0LHDqiS
+
+2. PinChat 聊天室 - https://pinchat.me/NXP36
