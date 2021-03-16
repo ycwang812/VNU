@@ -1,6 +1,4 @@
-# AWS Academy Cloud Foundations 培訓課
-
-## 課程內容
+# AWS Academy Cloud Foundations 課程單元
 
 1. Cloud Concepts Overview - 雲端概念概述
 2. Cloud Economics and Billing - 雲經濟學和帳單
