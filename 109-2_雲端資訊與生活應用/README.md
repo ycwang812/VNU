@@ -26,8 +26,10 @@
 
 2. AWS Academy Cloud Foundations [2718] (ACFv2EN-2718) - https://awsacademy.instructure.com/courses/2718
 
-## 3. 協作平台
+### Discord：
 
-1. Line 群組 - http://line.me/ti/g/i3c0LHDqiS
+1. 課程討論區 - https://discord.gg/kjbAVyb4
 
-2. PinChat 聊天室 - https://pinchat.me/NXP36
+2. 雲端教室 - https://discord.gg/vtDfwC8b
+
+### YouTube：
