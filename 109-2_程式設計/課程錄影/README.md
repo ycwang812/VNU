@@ -1,18 +1,23 @@
-# 109-2 雲端資訊與生活應用
+# YouTube 課程錄影
 
-## YouTube 頻道
+1. 2021/03/22 - https://youtu.be/blgHgr41UnM
 
-https://www.youtube.com/user/ycwang812
+2. 2021/03/29 - https://youtu.be/2_SwXmEJdLw
 
-## YouTube 課程錄影播放清單
+3. 2021/04/12 - https://youtu.be/8a2RvTUGk1I
 
-https://youtu.be/0Kl9X5Jsk-M
+4. 2021/04/19 - 缺
 
-## Youtube 影片
+5. 2021/04/26 - 缺
 
-1. 2021/05/17 - https://youtu.be/0Kl9X5Jsk-M
+6. 2021/05/03 - https://youtu.be/IBTWzouvYvs
 
-2. 2021/05/24 - https://youtu.be/G6cu46zMxmE
-                https://youtu.be/G6cu46zMxmE
+7. 2021/05/10 - https://youtu.be/_7FzSFTdBOA
 
-3. 2021/05/31 - 
+8. 2021/05/17 - https://youtu.be/ROGIQiB-PB8
+
+9. 2021/05/24 1 - https://youtu.be/VQk5Ip9S3JA
+
+10. 2021/05/24 2 - https://youtu.be/Xb5Ac4X32ZM
+
+11. 2021/05/31 - 
