@@ -28,9 +28,9 @@
 
 ### Discord：
 
-1. 課程討論區 - https://discord.gg/kjbAVyb4
+1. 課程討論區 - https://discord.gg/ZmB9dXPY
 
-2. 雲端教室 - https://discord.gg/vtDfwC8b
+2. 雲端教室 - https://discord.gg/xgGBBYP7
 
 ### YouTube：
 
