@@ -37,3 +37,13 @@
 1. 課程頻道 - https://www.youtube.com/user/ycwang812
 
 2. 課程錄影播放清單 - https://youtu.be/0Kl9X5Jsk-M
+
+### Hands-on Activities Guide - http://awseducatehandson.s3-website-us-east-1.amazonaws.com
+
+![](https://github.com/ycwang812/AWS-Educate/blob/master/images/Hands-on%20Activities%20Guide.png)
+
+## 授權圖示
+
+![](https://github.com/ycwang812/AWS-Academy/blob/master/images/AWS%20Academy%20Accredited%20Instructor.png)
+
+![](https://github.com/ycwang812/AWS-Educate/blob/master/images/poweredby_AWSEducate.png)
