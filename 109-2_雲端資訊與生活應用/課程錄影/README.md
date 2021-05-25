@@ -1,5 +1,3 @@
-# 109-2 雲端資訊與生活應用
-
 ## YouTube 頻道
 
 https://www.youtube.com/user/ycwang812
