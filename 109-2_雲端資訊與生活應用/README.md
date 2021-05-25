@@ -36,7 +36,7 @@
 
 1. 課程頻道 - https://www.youtube.com/user/ycwang812
 
-2. 課程錄影播放清單 - https://youtu.be/0Kl9X5Jsk-M
+2. 課程錄影播放清單 - https://youtube.com/playlist?list=PLaYAkxFY5gQ3ieaTd04lWWjYJjuUMibFb
 
 ### Hands-on Activities Guide - http://awseducatehandson.s3-website-us-east-1.amazonaws.com
 
