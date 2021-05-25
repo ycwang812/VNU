@@ -32,4 +32,4 @@
 
 2. 雲端教室 - https://discord.gg/vtDfwC8b
 
-### YouTube：
+### YouTube 課程錄影 - https://www.youtube.com/user/ycwang812
