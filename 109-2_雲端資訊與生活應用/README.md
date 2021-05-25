@@ -34,6 +34,6 @@
 
 ### YouTube：
 
-1. 頻道 - https://www.youtube.com/user/ycwang812
+1. 課程頻道 - https://www.youtube.com/user/ycwang812
 
-2. 課程播放清單 - https://youtu.be/0Kl9X5Jsk-M
+2. 課程錄影播放清單 - https://youtu.be/0Kl9X5Jsk-M
