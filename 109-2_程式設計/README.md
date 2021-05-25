@@ -26,4 +26,6 @@
 
 1. 頻道 - https://www.youtube.com/user/ycwang812
 
-2. 課程播放清單 - https://youtu.be/blgHgr41UnM
+2. 課程播放清單 - https://youtube.com/playlist?list=PLaYAkxFY5gQ2njvnk6YSnIYdMikzWCRdb
+
+3. 創意 APP 程式設計 - https://youtube.com/playlist?list=PLaYAkxFY5gQ0N3epvHaAI_-WXtRQ0ipiS
