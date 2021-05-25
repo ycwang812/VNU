@@ -47,7 +47,3 @@
 ![](https://github.com/ycwang812/AWS-Academy/blob/master/images/AWS%20Academy%20Accredited%20Instructor.png)
 
 ![](https://github.com/ycwang812/AWS-Educate/blob/master/images/poweredby_AWSEducate.png)
-
-![](https://github.com/ycwang812/AWS-Academy/blob/master/images/AWS-Academy-Accredited-Educator-Logo_PMS-PRINT.png)
-
-![](https://github.com/ycwang812/AWS-Academy/blob/master/images/aws-academy-accredited-educator.png)
