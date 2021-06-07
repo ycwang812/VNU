@@ -20,4 +20,6 @@
 
 10. 2021/05/24 2 - https://youtu.be/Xb5Ac4X32ZM
 
-11. 2021/05/31 - 
+11. 2021/05/31 - https://youtu.be/WmmpzAPaD8w
+
+12. 2021/06/07 - https://youtu.be/uzq3QRY3ymk 
