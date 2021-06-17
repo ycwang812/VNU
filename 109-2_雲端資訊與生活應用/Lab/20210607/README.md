@@ -5,6 +5,10 @@
 
 開始日期: 2021.6.1 - 截止日期: 2021.6.30
 
+## 活動官網
+
+https://events.withgoogle.com/cloud-study-jam-2021-twhk/
+
 ## 報名網址
 
 https://events.withgoogle.com/cloud-study-jam-2021-twhk/registrations/new/
@@ -47,5 +51,5 @@ https://youtu.be/6BiAQ8AKNVI
 * Secure Workloads in Google Kubernetes Engine (https://google.qwiklabs.com/quests/142)
 * Integrate with Machine Learning APIs (https://google.qwiklabs.com/quests/136)
 * Serverless Cloud Run Development (https://google.qwiklabs.com/quests/152)
-* Application Development - Python (https://www.qwiklabs.com/quests/41?)
+* Application Development - Python (https://www.qwiklabs.com/quests/41\\?)
 * Anthos: Service Mesh (https://www.qwiklabs.com/quests/151)
