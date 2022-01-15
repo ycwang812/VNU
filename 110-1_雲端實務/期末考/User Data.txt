@@ -1,0 +1,8 @@
+#!/bin/bash
+sleep 30
+yum -y install wget
+wget https://s3.amazonaws.com/ee-assets-prod-us-east-1/modules/gd2015-loadgen/v0.1/server
+chmod +x server
+./server
+# Reboot if the server crashes
+shutdown -h now
