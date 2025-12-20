@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>積體電路設計概論：互動學習平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            height: 300px; 
+            max-height: 400px; 
+        }
+        .interactive-card { transition: all 0.3s ease; }
+        .interactive-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .gate-input { cursor: pointer; user-select: none; }
+    </style>
+    <!-- Chosen Palette: Tech Stone & Circuit Blue (Warm neutral background with precise technical accents) -->
+    <!-- Application Structure Plan: 
+         1. Hero Section: Introduction to IC Design definition.
+         2. Materials & Fundamentals: Interactive chart comparing materials (Why Silicon?).
+         3. The CMOS Lab: Interactive Canvas simulation of a CMOS Inverter to explain PMOS/NMOS logic.
+         4. Design Flow Timeline: Vertical interactive timeline explaining the step-by-step process from Specs to Wafer.
+         5. Knowledge Check: An interactive quiz module using the provided question data to reinforce learning.
+         This structure moves from abstract definition to physical material, then to circuit logic, process flow, and finally assessment. -->
+    <!-- Visualization & Content Choices:
+         1. Material Comparison (Bar Chart): Visualizes why Silicon is chosen (Abundance vs Cost) based on quiz distractors.
+         2. CMOS Simulator (Canvas): Draws a schematic that lights up based on user input (0/1) to visualize the 'Complementary' nature.
+         3. Logic Truth Table (HTML Grid): Interactive table to explore OR/AND gates.
+         4. Quiz Module (JS/HTML): Dynamic rendering of questions from the source text.
+         5. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-stone-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-900 tracking-tight">114-1 積體電路設計概論<span class="text-blue-500">.期末考</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="scrollToSection('materials')" class="text-stone-500 hover:text-blue-600 font-medium transition-colors">材料基礎</button>
+                    <button onclick="scrollToSection('cmos')" class="text-stone-500 hover:text-blue-600 font-medium transition-colors">CMOS 原理</button>
+                    <button onclick="scrollToSection('flow')" class="text-stone-500 hover:text-blue-600 font-medium transition-colors">設計流程</button>
+                    <button onclick="scrollToSection('quiz')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">自我測驗</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-stone-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+                積體電路設計概論
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-stone-500">
+                探索從矽沙到晶片的旅程。了解 IC 設計的核心概念、材料科學與數位邏輯。
+            </p>
+            <div class="mt-8">
+                <div class="inline-flex rounded-md shadow">
+                    <button onclick="scrollToSection('materials')" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        開始學習
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- Section 1: Materials (Why Silicon?) -->
+        <section id="materials" class="scroll-mt-24">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-stone-900">半導體材料基礎</h2>
+                <p class="mt-4 text-lg text-stone-600 max-w-3xl mx-auto">
+                    積體電路 (Integrated Circuit, IC) 是現代科技的基石。在我們深入電路設計之前，必須先了解為什麼「矽 (Silicon)」是這個產業的絕對霸主，而非黃金或塑膠。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                    <h3 class="text-xl font-semibold text-stone-800 mb-4">材料特性比較</h3>
+                    <div class="chart-container">
+                        <canvas id="materialChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-sm text-stone-500 text-center">
+                        *數值為教學示意比較：矽在成本與半導體特性上取得了最佳平衡。
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="interactive-card bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="text-lg font-bold text-blue-900">矽 (Silicon)</h4>
+                        <p class="text-blue-800 mt-2">
+                            地殼中含量第二豐富的元素（僅次於氧）。它具有優良的半導體特性，可以透過摻雜（Doping）精確控制導電性，是製作晶圓 (Wafer) 的主要材料。
+                        </p>
+                    </div>
+                    <div class="interactive-card bg-stone-100 p-6 rounded-xl border-l-4 border-stone-400 opacity-75 hover:opacity-100">
+                        <h4 class="text-lg font-bold text-stone-700">其他選項的限制</h4>
+                        <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
+                            <li><strong>黃金 (Gold):</strong> 導電性極佳，但成本過高且無法作為半導體開關。</li>
+                            <li><strong>塑膠 (Plastic):</strong> 是絕緣體，無法傳導電流進行運算。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: CMOS Interactive Lab -->
+        <section id="cmos" class="scroll-mt-24 bg-stone-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden relative shadow-2xl">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-4">核心技術</div>
+                    <h2 class="text-3xl font-bold mb-6">CMOS 運作原理實驗室</h2>
+                    <p class="text-stone-300 mb-6 text-lg">
+                        CMOS (Complementary MOS) 利用互補的電晶體對來運作。觀察當輸入訊號改變時，PMOS 與 NMOS 如何像開關一樣動作。
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="font-bold text-blue-300">PMOS (上方)</h4>
+                            <p class="text-sm text-stone-300">當輸入為低電位 (0) 時導通，負責將輸出拉升至 Vdd。</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="font-bold text-emerald-300">NMOS (下方)</h4>
+                            <p class="text-sm text-stone-300">當輸入為高電位 (1) 時導通，負責將輸出拉降至 GND。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex items-center space-x-6">
+                        <span class="text-stone-400 font-mono">輸入訊號控制：</span>
+                        <div class="flex bg-stone-800 rounded-lg p-1">
+                            <button onclick="setCMOSInput(0)" id="btn-low" class="px-6 py-2 rounded-md font-mono text-sm transition-all bg-blue-600 text-white shadow-lg">Logic 0</button>
+                            <button onclick="setCMOSInput(1)" id="btn-high" class="px-6 py-2 rounded-md font-mono text-sm transition-all text-stone-400 hover:text-white">Logic 1</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center bg-stone-800/50 rounded-2xl p-6 border border-stone-700">
+                    <h3 class="text-stone-400 text-sm mb-4 uppercase tracking-widest">CMOS 反相器模擬</h3>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="cmosCanvas"></canvas>
+                    </div>
+                    <div class="mt-4 flex justify-between w-full max-w-[300px] text-sm font-mono text-stone-400">
+                        <span id="pmos-status">PMOS: OFF</span>
+                        <span id="nmos-status">NMOS: OFF</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Design Flow -->
+        <section id="flow" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-stone-900">IC 設計流程</h2>
+                <p class="mt-4 text-stone-600 max-w-2xl mx-auto">
+                    從概念到晶片，需要經歷嚴謹的步驟。點擊下方流程了解每個階段的關鍵任務與使用的 EDA 工具。
+                </p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-stone-200"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative mb-12 group cursor-pointer" onclick="toggleFlow(1)">
+                    <div class="flex items-center justify-between w-full">
+                        <div class="w-5/12 text-right pr-8">
+                            <h3 class="text-xl font-bold text-stone-800 group-hover:text-blue-600 transition-colors">規格定義 (Spec)</h3>
+                            <p class="text-sm text-stone-500 mt-1 hidden md:block">定義功能、效能與功耗目標</p>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white text-xs font-bold">1</div>
+                        <div class="w-5/12 pl-8">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-200 group-hover:shadow-md transition-shadow">
+                                <p class="text-stone-600 text-sm">設計的第一步。決定晶片要做什麼，例如運算速度要多快、能耗要多低。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative mb-12 group cursor-pointer" onclick="toggleFlow(2)">
+                    <div class="flex items-center justify-between w-full flex-row-reverse">
+                        <div class="w-5/12 text-left pl-8">
+                            <h3 class="text-xl font-bold text-stone-800 group-hover:text-blue-600 transition-colors">RTL 設計 (HDL)</h3>
+                            <p class="text-sm text-stone-500 mt-1 hidden md:block">使用 Verilog/VHDL 撰寫程式碼</p>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-stone-400 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white text-xs font-bold group-hover:bg-blue-600 transition-colors">2</div>
+                        <div class="w-5/12 pr-8 text-right">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-200 group-hover:shadow-md transition-shadow">
+                                <p class="text-stone-600 text-sm">工程師使用文字編輯器撰寫硬體描述語言，描述電路的邏輯行為。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative mb-12 group cursor-pointer" onclick="toggleFlow(3)">
+                    <div class="flex items-center justify-between w-full">
+                        <div class="w-5/12 text-right pr-8">
+                            <h3 class="text-xl font-bold text-stone-800 group-hover:text-blue-600 transition-colors">邏輯合成 (Synthesis)</h3>
+                            <p class="text-sm text-stone-500 mt-1 hidden md:block">轉換為邏輯閘 (Gate-level)</p>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-stone-400 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white text-xs font-bold group-hover:bg-blue-600 transition-colors">3</div>
+                        <div class="w-5/12 pl-8">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-200 group-hover:shadow-md transition-shadow">
+                                <p class="text-stone-600 text-sm">EDA 工具將程式碼轉換成實際的邏輯閘電路圖 (Netlist)，這是從軟體轉向硬體的關鍵。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative mb-12 group cursor-pointer" onclick="toggleFlow(4)">
+                    <div class="flex items-center justify-between w-full flex-row-reverse">
+                        <div class="w-5/12 text-left pl-8">
+                            <h3 class="text-xl font-bold text-stone-800 group-hover:text-blue-600 transition-colors">實體佈局 (Layout)</h3>
+                            <p class="text-sm text-stone-500 mt-1 hidden md:block">擺放與繞線 (APR)</p>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-stone-400 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white text-xs font-bold group-hover:bg-blue-600 transition-colors">4</div>
+                        <div class="w-5/12 pr-8 text-right">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border border-stone-200 group-hover:shadow-md transition-shadow">
+                                <p class="text-stone-600 text-sm">決定每個電晶體與導線在晶片上的精確幾何位置，這時會產生幾何圖形檔案 (GDSII)。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Quiz -->
+        <section id="quiz" class="scroll-mt-24 bg-blue-50 rounded-3xl p-8 border border-blue-100">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-blue-900">自我能力檢測</h2>
+                <p class="mt-2 text-blue-700">
+                    測試你對 IC 設計基礎、材料與流程的理解程度。
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 bg-blue-600 text-white flex justify-between items-center">
+                    <span class="font-bold text-lg">Question <span id="q-number">1</span>/10</span>
+                    <span class="text-blue-100 text-sm" id="score-display">Score: 0</span>
+                </div>
+                
+                <div class="p-8">
+                    <h3 id="question-text" class="text-xl font-semibold text-stone-800 mb-6 min-h-[60px]">
+                        題目載入中...
+                    </h3>
+                    
+                    <div id="options-container" class="space-y-3">
+                        <!-- Options will be injected here -->
+                    </div>
+
+                    <div id="feedback-area" class="mt-6 hidden p-4 rounded-lg bg-stone-100 border border-stone-200">
+                        <p id="feedback-text" class="text-stone-700"></p>
+                        <button onclick="nextQuestion()" class="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 font-medium">下一題</button>
+                    </div>
+
+                    <div id="final-score" class="hidden text-center">
+                        <div class="text-5xl mb-4">🎉</div>
+                        <h3 class="text-2xl font-bold text-stone-800 mb-2">測驗完成！</h3>
+                        <p class="text-lg text-stone-600 mb-6">你的總分：<span id="final-score-val" class="font-bold text-blue-600"></span>/100</p>
+                        <button onclick="resetQuiz()" class="px-6 py-2 bg-stone-800 text-white rounded hover:bg-stone-900">重新測驗</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-100 border-t border-stone-200 mt-24 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-stone-500">
+            <p>&copy; 2025 積體電路設計概論. Brian Wang.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. Material Chart ---
+        const ctxMaterial = document.getElementById('materialChart').getContext('2d');
+        new Chart(ctxMaterial, {
+            type: 'bar',
+            data: {
+                labels: ['矽 (Silicon)', '黃金 (Gold)', '塑膠 (Plastic)', '木材 (Wood)'],
+                datasets: [{
+                    label: '半導體適用性指數',
+                    data: [95, 40, 10, 0], // Conceptual data
+                    backgroundColor: [
+                        'rgba(37, 99, 235, 0.8)', // Silicon - Blue
+                        'rgba(234, 179, 8, 0.5)', // Gold - Yellow
+                        'rgba(168, 162, 158, 0.5)', // Plastic - Gray
+                        'rgba(120, 113, 108, 0.5)' // Wood - Brown
+                    ],
+                    borderColor: [
+                        'rgba(37, 99, 235, 1)',
+                        'rgba(234, 179, 8, 1)',
+                        'rgba(168, 162, 158, 1)',
+                        'rgba(120, 113, 108, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, display: false },
+                    x: { grid: { display: false } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const labels = [
+                                    "完美平衡：半導體特性佳、儲量豐富",
+                                    "導體：雖導電佳但太貴且無法做半導體",
+                                    "絕緣體：無法導電",
+                                    "絕緣體：不具電子特性"
+                                ];
+                                return labels[context.dataIndex];
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- 2. CMOS Interactive Canvas ---
+        const canvas = document.getElementById('cmosCanvas');
+        const ctx = canvas.getContext('2d');
+        let inputState = 0; // 0 (Low) or 1 (High)
+
+        function resizeCanvas() {
+            // Set canvas internal resolution to match display size for crisp rendering
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+            drawCMOS();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function drawCMOS() {
+            const w = canvas.width;
+            const h = canvas.height;
+            const cx = w / 2;
+            
+            ctx.clearRect(0, 0, w, h);
+            ctx.lineWidth = 4;
+            ctx.lineCap = 'round';
+
+            // Colors
+            const colorWire = '#57534e'; // stone-600
+            const colorActive = '#2563eb'; // blue-600 (Current Flow)
+            const colorOff = '#d6d3d1'; // stone-300
+            const colorVdd = '#ef4444'; // red-500
+            const colorGnd = '#22c55e'; // green-500
+
+            // PMOS (Top)
+            const pmosY = h * 0.25;
+            const nmosY = h * 0.75;
+            
+            // Logic: Input 0 -> PMOS ON, NMOS OFF -> Output High (Vdd)
+            // Logic: Input 1 -> PMOS OFF, NMOS ON -> Output Low (Gnd)
+            const pmosOn = inputState === 0;
+            const nmosOn = inputState === 1;
+
+            // Draw Wires
+            // Vdd to PMOS
+            ctx.strokeStyle = colorVdd;
+            ctx.beginPath(); ctx.moveTo(cx, 20); ctx.lineTo(cx, pmosY - 20); ctx.stroke();
+            
+            // PMOS to Output (The Path)
+            ctx.strokeStyle = pmosOn ? colorVdd : colorOff;
+            ctx.beginPath(); ctx.moveTo(cx, pmosY + 20); ctx.lineTo(cx, h/2); ctx.stroke();
+            
+            // Output Line
+            ctx.strokeStyle = pmosOn ? colorVdd : (nmosOn ? colorGnd : colorWire);
+            ctx.beginPath(); ctx.moveTo(cx, h/2); ctx.lineTo(w - 50, h/2); ctx.stroke();
+            
+            // NMOS to Output
+            ctx.strokeStyle = nmosOn ? colorGnd : colorOff;
+            ctx.beginPath(); ctx.moveTo(cx, nmosY - 20); ctx.lineTo(cx, h/2); ctx.stroke();
+
+            // NMOS to GND
+            ctx.strokeStyle = colorGnd;
+            ctx.beginPath(); ctx.moveTo(cx, nmosY + 20); ctx.lineTo(cx, h - 20); ctx.stroke();
+
+            // Draw Transistor Symbols
+            drawTransistor(cx, pmosY, 'PMOS', pmosOn);
+            drawTransistor(cx, nmosY, 'NMOS', nmosOn);
+
+            // Draw Labels
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 14px monospace';
+            ctx.fillText('Vdd (1)', cx + 10, 30);
+            ctx.fillText('GND (0)', cx + 10, h - 10);
+            
+            // Output Label
+            ctx.fillStyle = pmosOn ? colorVdd : colorGnd;
+            ctx.font = 'bold 20px monospace';
+            ctx.textAlign = 'left';
+            ctx.fillText(`OUT: ${pmosOn ? 1 : 0}`, w - 90, h/2 - 10);
+        }
+
+        function drawTransistor(x, y, type, isOn) {
+            ctx.fillStyle = isOn ? '#fff' : '#e7e5e4'; // White if on, gray if off
+            ctx.strokeStyle = isOn ? '#2563eb' : '#78716c';
+            ctx.lineWidth = 3;
+
+            // Gate plates
+            ctx.beginPath();
+            ctx.moveTo(x - 20, y - 10); ctx.lineTo(x + 20, y - 10); // Top plate
+            ctx.moveTo(x - 20, y + 10); ctx.lineTo(x + 20, y + 10); // Bottom plate
+            ctx.stroke();
+            
+            // Bubble for PMOS
+            if (type === 'PMOS') {
+                ctx.beginPath();
+                ctx.arc(x - 25, y, 4, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Input line to gate
+            ctx.beginPath();
+            ctx.moveTo(x - 40, y);
+            ctx.lineTo(type === 'PMOS' ? x - 29 : x - 20, y);
+            ctx.stroke();
+            
+            // Gate Label
+            ctx.fillStyle = '#9ca3af';
+            ctx.font = '12px sans-serif';
+            ctx.textAlign = 'right';
+            ctx.fillText('Gate', x - 45, y + 4);
+
+            // Status Text
+            ctx.fillStyle = isOn ? '#2563eb' : '#57534e';
+            ctx.font = 'bold 12px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(isOn ? 'ON' : 'OFF', x + 40, y + 4);
+        }
+
+        function setCMOSInput(val) {
+            inputState = val;
+            
+            // Update UI buttons
+            const btnLow = document.getElementById('btn-low');
+            const btnHigh = document.getElementById('btn-high');
+            
+            if(val === 0) {
+                btnLow.classList.replace('text-stone-400', 'text-white');
+                btnLow.classList.replace('bg-stone-800', 'bg-blue-600'); // Failsafe if classes missing
+                btnLow.className = "px-6 py-2 rounded-md font-mono text-sm transition-all bg-blue-600 text-white shadow-lg";
+                
+                btnHigh.className = "px-6 py-2 rounded-md font-mono text-sm transition-all text-stone-400 hover:text-white";
+                
+                document.getElementById('pmos-status').textContent = "PMOS: ON (Conducting)";
+                document.getElementById('pmos-status').className = "text-blue-400 font-bold";
+                document.getElementById('nmos-status').textContent = "NMOS: OFF (Open)";
+                document.getElementById('nmos-status').className = "text-stone-500";
+            } else {
+                btnHigh.className = "px-6 py-2 rounded-md font-mono text-sm transition-all bg-blue-600 text-white shadow-lg";
+                
+                btnLow.className = "px-6 py-2 rounded-md font-mono text-sm transition-all text-stone-400 hover:text-white";
+                
+                document.getElementById('pmos-status').textContent = "PMOS: OFF (Open)";
+                document.getElementById('pmos-status').className = "text-stone-500";
+                document.getElementById('nmos-status').textContent = "NMOS: ON (Conducting)";
+                document.getElementById('nmos-status').className = "text-emerald-400 font-bold";
+            }
+            drawCMOS();
+        }
+
+        // Initialize Canvas
+        resizeCanvas();
+        setCMOSInput(0);
+
+
+        // --- 3. Quiz Logic ---
+        const questions = [
+            {
+                q: "在積體電路中，IC 這兩個字母的縮寫全稱是什麼？",
+                options: ["Integrated Circuit", "Internal Computer", "Internet Connection", "Information Center"],
+                correct: 0,
+                rationale: "IC 代表 Integrated Circuit，即積體電路，將電子元件整合在單一晶片上。"
+            },
+            {
+                q: "製作積體電路最常用的半導體基礎材料是什麼？",
+                options: ["矽 (Silicon)", "黃金 (Gold)", "塑膠 (Plastic)", "木材 (Wood)"],
+                correct: 0,
+                rationale: "矽 (Silicon) 是半導體產業的核心材料，來源豐富且特性優良。"
+            },
+            {
+                q: "在 CMOS 技術中，通常由哪兩種電晶體成對組成？",
+                options: ["PMOS 與 NMOS", "BJT 與 MOSFET", "電阻與電容", "LED 與 LCD"],
+                correct: 0,
+                rationale: "CMOS (Complementary MOS) 由 P 型與 N 型 MOSFET 互補組成。"
+            },
+            {
+                q: "IC 設計流程中，第一步通常是先定義什麼？",
+                options: ["規格 (Specification)", "封裝 (Packaging)", "晶圓切割", "銷售定價"],
+                correct: 0,
+                rationale: "設計前必須先定義規格 (Spec)，確認晶片的功能與目標。"
+            },
+            {
+                q: "下列哪種工具是 IC 設計工程師最常用來撰寫硬體描述語言（HDL）的？",
+                options: ["文字編輯器 (Text Editor)", "Photoshop", "Excel", "PowerPoint"],
+                correct: 0,
+                rationale: "HDL (如 Verilog) 是程式碼，主要使用文字編輯器撰寫。"
+            },
+            {
+                q: "電路圖中，'Vdd' 通常代表什麼？",
+                options: ["電源供應電壓", "接地端 (Ground)", "輸出端 (Output)", "輸入端 (Input)"],
+                correct: 0,
+                rationale: "Vdd 代表電源供應電壓 (Supply Voltage)。"
+            },
+            {
+                q: "在數位邏輯中，'1' 與 '0' 通常代表什麼意義？",
+                options: ["不同的電位水準", "電線的顏色", "晶片的重量", "工程師的人數"],
+                correct: 0,
+                rationale: "數位電路用高低電位來代表邏輯 1 與 0。"
+            },
+            {
+                q: "哪一種邏輯閘的功能是：只要輸入有任何一個是 1，輸出就是 1？",
+                options: ["或閘 (OR Gate)", "及閘 (AND Gate)", "反相器 (NOT Gate)", "互斥或閘 (XOR Gate)"],
+                correct: 0,
+                rationale: "這是 OR Gate (或閘) 的定義。"
+            },
+            {
+                q: "所謂的「晶圓」（Wafer）通常長什麼樣子？",
+                options: ["薄薄的圓盤狀", "正立方體", "長條三角形", "液體狀態"],
+                correct: 0,
+                rationale: "晶圓是圓柱狀晶棒切下的薄片，呈圓盤狀。"
+            },
+            {
+                q: "EDA 工具在 IC 設計中扮演什麼角色？",
+                options: ["輔助工程師設計與模擬電路", "用來清潔晶片的化學藥水", "搬運晶圓的機器人", "測試晶片耐摔程度的工具"],
+                correct: 0,
+                rationale: "EDA (Electronic Design Automation) 是設計自動化軟體。"
+            }
+        ];
+
+        let currentQIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+            const q = questions[currentQIndex];
+            document.getElementById('q-number').textContent = currentQIndex + 1;
+            document.getElementById('question-text').textContent = q.q;
+            
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            document.getElementById('feedback-area').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-lg border border-stone-200 hover:bg-blue-50 hover:border-blue-300 transition-all flex items-center group";
+                btn.onclick = () => checkAnswer(idx, btn);
+                btn.innerHTML = `<span class="w-6 h-6 rounded-full border border-stone-300 mr-3 flex items-center justify-center text-xs font-bold text-stone-500 group-hover:border-blue-500 group-hover:text-blue-500">${String.fromCharCode(65+idx)}</span> ${opt}`;
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex, btnElement) {
+            if(answered) return;
+            answered = true;
+            
+            const q = questions[currentQIndex];
+            const isCorrect = selectedIndex === q.correct;
+            const feedbackArea = document.getElementById('feedback-area');
+            const feedbackText = document.getElementById('feedback-text');
+            const options = document.getElementById('options-container').children;
+
+            if(isCorrect) {
+                score += 10;
+                document.getElementById('score-display').textContent = `Score: ${score}`;
+                btnElement.classList.add('bg-green-100', 'border-green-500');
+                btnElement.querySelector('span').classList.add('bg-green-500', 'text-white', 'border-green-500');
+                feedbackText.innerHTML = `<span class="text-green-600 font-bold">正確！</span> ${q.rationale}`;
+            } else {
+                btnElement.classList.add('bg-red-50', 'border-red-500');
+                btnElement.querySelector('span').classList.add('bg-red-500', 'text-white', 'border-red-500');
+                // Highlight correct
+                options[q.correct].classList.add('bg-green-50', 'border-green-500');
+                feedbackText.innerHTML = `<span class="text-red-600 font-bold">錯誤。</span> 正確答案是 ${q.options[q.correct]}。<br>${q.rationale}`;
+            }
+
+            feedbackArea.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (currentQIndex < questions.length - 1) {
+                currentQIndex++;
+                loadQuestion();
+            } else {
+                // End Quiz
+                document.getElementById('question-text').parentElement.classList.add('hidden');
+                const finalDiv = document.getElementById('final-score');
+                finalDiv.classList.remove('hidden');
+                document.getElementById('final-score-val').textContent = score;
+            }
+        }
+
+        function resetQuiz() {
+            currentQIndex = 0;
+            score = 0;
+            document.getElementById('score-display').textContent = `Score: 0`;
+            document.getElementById('final-score').classList.add('hidden');
+            document.getElementById('question-text').parentElement.classList.remove('hidden');
+            loadQuestion();
+        }
+
+        // Navigation Helper
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize
+        loadQuestion();
+
+    </script>
+</body>
+</html>
